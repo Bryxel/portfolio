@@ -15,7 +15,7 @@ export default function Projects() {
       link: 'https://klaro-docs.vercel.app/',
       github: null,
       logo: '/klaro.png',
-      logoSize: 'w-48 h-48'
+      logoSize: 'w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48'
     },
     {
       title: 'Eclipse ADHD Blocker',
@@ -29,7 +29,7 @@ export default function Projects() {
       link: 'https://chromewebstore.google.com/detail/eclipse-adhd-blocker/ddgpmapoeniaajondpdgpkoopodpecid',
       github: null,
       logo: '/eclipse.png',
-      logoSize: 'w-48 h-48'
+      logoSize: 'w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48'
     },
     {
       title: 'Nexus Ultra',
@@ -43,7 +43,7 @@ export default function Projects() {
       link: 'https://nexus-ultra.onrender.com',
       github: null,
       logo: '/nexus.png',
-      logoSize: 'w-48 h-48'
+      logoSize: 'w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48'
     },
     {
       title: 'WAYPOINT',
@@ -57,7 +57,7 @@ export default function Projects() {
       link: null,
       github: 'https://github.com/Bryxel/WAYPOINT-Life-Simulator',
       logo: '/waypoint.png',
-      logoSize: 'w-48 h-48'
+      logoSize: 'w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48'
     }
   ];
 
@@ -75,24 +75,26 @@ export default function Projects() {
               key={index}
               className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100"
             >
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className={`relative ${project.logoSize} mb-4`}>
                     <Image
                       src={project.logo}
                       alt={`${project.title} logo`}
                       fill
+                      sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
                       className="object-contain"
+                      priority={index < 2}
                     />
                   </div>
-                  <p className="text-gray-600 text-lg font-medium">{project.description}</p>
+                  <p className="text-gray-600 text-base sm:text-lg font-medium">{project.description}</p>
                 </div>
                 
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-sm font-medium border border-blue-100"
+                      className="px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-xs sm:text-sm font-medium border border-blue-100"
                     >
                       {tech}
                     </span>
@@ -103,7 +105,7 @@ export default function Projects() {
                   {project.highlights.map((highlight, highlightIndex) => (
                     <li key={highlightIndex} className="flex items-start">
                       <span className="text-blue-500 mr-2">•</span>
-                      <span className="text-gray-600">{highlight}</span>
+                      <span className="text-gray-600 text-sm sm:text-base">{highlight}</span>
                     </li>
                   ))}
                 </ul>
