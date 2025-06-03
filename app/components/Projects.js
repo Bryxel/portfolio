@@ -29,7 +29,7 @@ export default function Projects() {
       link: 'https://chromewebstore.google.com/detail/eclipse-adhd-blocker/ddgpmapoeniaajondpdgpkoopodpecid',
       github: null,
       logo: '/eclipse.png',
-      logoSize: 'w-40 h-40'
+      logoSize: 'w-48 h-48'
     },
     {
       title: 'Nexus Ultra',
@@ -43,7 +43,7 @@ export default function Projects() {
       link: 'https://nexus-ultra.onrender.com',
       github: null,
       logo: '/nexus.png',
-      logoSize: 'w-72 h-72'
+      logoSize: 'w-48 h-48'
     },
     {
       title: 'WAYPOINT',
@@ -57,7 +57,7 @@ export default function Projects() {
       link: null,
       github: 'https://github.com/Bryxel/WAYPOINT-Life-Simulator',
       logo: '/waypoint.png',
-      logoSize: 'w-56 h-56'
+      logoSize: 'w-48 h-48'
     }
   ];
 
@@ -73,12 +73,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100"
             >
               <div className="p-6">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className={`relative ${project.logoSize} mb-4 transition-transform duration-300 group-hover:scale-110`}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+                  <div className={`relative ${project.logoSize} mb-4`}>
                     <Image
                       src={project.logo}
                       alt={`${project.title} logo`}
@@ -93,7 +92,7 @@ export default function Projects() {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-sm font-medium border border-blue-100 hover:border-blue-200 transition-colors duration-300"
+                      className="px-3 py-1 bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 rounded-full text-sm font-medium border border-blue-100"
                     >
                       {tech}
                     </span>
@@ -102,9 +101,9 @@ export default function Projects() {
 
                 <ul className="space-y-2 mb-6">
                   {project.highlights.map((highlight, highlightIndex) => (
-                    <li key={highlightIndex} className="flex items-start group/item">
-                      <span className="text-blue-500 mr-2 group-hover/item:text-blue-600 transition-colors duration-300">•</span>
-                      <span className="text-gray-600 group-hover/item:text-gray-700 transition-colors duration-300">{highlight}</span>
+                    <li key={highlightIndex} className="flex items-start">
+                      <span className="text-blue-500 mr-2">•</span>
+                      <span className="text-gray-600">{highlight}</span>
                     </li>
                   ))}
                 </ul>
@@ -115,10 +114,10 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-all duration-300 group/link"
+                      className="inline-flex items-center text-blue-600"
                     >
                       <span className="mr-1">Live Demo</span>
-                      <span className="transform group-hover/link:translate-x-1 transition-transform duration-300">→</span>
+                      <span>→</span>
                     </a>
                   )}
                   {project.github && (
@@ -126,10 +125,10 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-gray-600 hover:text-gray-700 transition-all duration-300 group/link"
+                      className="inline-flex items-center text-gray-600"
                     >
                       <span className="mr-1">View Code</span>
-                      <span className="transform group-hover/link:translate-x-1 transition-transform duration-300">→</span>
+                      <span>→</span>
                     </a>
                   )}
                 </div>
